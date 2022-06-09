@@ -50,12 +50,15 @@ Token* Lexer::getToken(Lexer *lexer) {
                 lexer->next(lexer);
                 return Token::init(Token::semicolon, ";");
         }
-//      TODO: Think about better solution for disguising id from
+//      TODO: Think about better solution for disguising id's from keywords
         char* word = getWord(lexer);
         if(isInVector(word, &lexer->keywords)) { //  Is keyword
             lexer->next(lexer);
             return Token::init(Token::keyword, word);
         }
+//        if(word == "//") {
+//            lexer->skipLine(lexer);
+//        }
         return Token::init(Token::id, word);
     }
     return nullptr;

@@ -4,8 +4,6 @@
 #include <vector>
 #include <cstring>
 
-template <typename T>
-bool isInArray(T* arr, T value);
 
 template<typename T>
 bool isInVector(T value, const std::vector<T>* keywords) {
